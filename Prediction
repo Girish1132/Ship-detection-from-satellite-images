@@ -1,0 +1,18 @@
+# Obtain predictions
+predicted_class = model.predict(X_test)
+
+predicted_class_probability = np.max(predicted_class, axis=1)*100
+predicted_class = np.argmax(predicted_class, axis=1)
+true_class = np.argmax(y_test, axis=1)
+
+correct = []
+incorrect = []
+
+for i in range(len(predicted_class)):
+    if predicted_class[i] == true_class[i]:
+        correct.append(i)
+    else:
+        incorrect.append(i)
+
+print('Correct predictions: ', len(correct))        
+print('Incorrect predictions: ', len(incorrect)) 
