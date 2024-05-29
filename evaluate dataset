@@ -1,0 +1,4 @@
+# Evaluate the model
+score = model.evaluate(X_test, y_test, verbose=1)
+print('Test Loss:', score[0])
+print('Test Accuracy:', score[1])
