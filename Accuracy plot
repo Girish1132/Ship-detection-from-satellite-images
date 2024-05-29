@@ -1,0 +1,20 @@
+# Show accuracy and loss plots of the model 
+accuracy = history.history['accuracy']
+val_accuracy = history.history['val_accuracy']
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+epochs = range(len(accuracy))
+
+plt.figure(figsize=(10,5))
+ax = plt.subplot(1, 2, 1)
+plt.plot(epochs, accuracy, 'b', label='Training accuracy')
+plt.plot(epochs, val_accuracy, 'r', label='Validation accuracy')
+plt.title('Training and Validation accuracy')
+plt.legend()
+
+ax = plt.subplot(1, 2, 2)
+plt.plot(epochs, loss, 'b', label='Training loss')
+plt.plot(epochs, val_loss, 'r', label='Validation loss')
+plt.title('Training and Validation loss')
+plt.legend()
+plt.show()
